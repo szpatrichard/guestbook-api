@@ -1,17 +1,25 @@
-const removeEntry = (req, res, next) => {
+/* Models */
+const Entry = require("../models/entry").Entry;
+
+const removeEntry = (req, res) => {
 	const { slug } = req.params;
-	const { entries } = req.app.locals;
-	const entry = entries.find((entry) => entry.slug === slug);
 
-	if (!entry) {
-		res.status(404).json({ error: "Entry not found." });
-		return;
-	}
-
-	entries.splice(entries.indexOf(entry), 1);
-	res.redirect(`${req.app.locals.API_V1_ROUTE}`);
+	/* Check if the entry exists */
+	Entry.fetchOne(slug, (err, row) => {
+		if (err) console.error(err.message);
+		if (!row) {
+			res.status(404).json({ message: "Entry not found." });
+			return;
+		}
+		/* Delete the entry if it exists and redirect to homepage */
+		Entry.delete(slug, (err) => {
+			if (err) console.error(err.message);
+			res.redirect(`${req.app.locals.API_V1_ROUTE}`);
+		});
+	});
 };
 
+/* Exports */
 module.exports = {
 	removeEntry,
 };

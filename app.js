@@ -11,8 +11,8 @@ const API_V1_ROUTE = "/api/v1";
 app.locals.API_V1_ROUTE = API_V1_ROUTE;
 
 /* Entries */
-let entries = [];
-app.locals.entries = entries;
+// let entries = [];
+// app.locals.entries = entries;
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -38,7 +38,7 @@ app.use((err, req, res, next) => {
 	res.locals.error = req.app.get("env") === "development" ? err : {};
 
 	// render the error page
-	res.status(err.status || 500).json({ error: "Not found." });
+	res.status(err.status || 500).json({ message: "Not found." });
 });
 
 module.exports = app;
