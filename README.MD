@@ -1,6 +1,6 @@
 # Guestbook
 
-A simple Express API for logging entries in a guestbook. The guestbook is updated using REST API.
+A simple Express API for logging entries in a guestbook. The guestbook is updated using REST API. Data is stored in a SQLite3 disk database.
 
 ## Routes
 
