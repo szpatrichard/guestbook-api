@@ -5,11 +5,11 @@ const editEntry = (req, res, next) => {
 	const entry = entries.find((entry) => entry.slug === slug);
 
 	if (!entry) {
-		res.status(404).send("Entry not found.");
+		res.status(404).json({ error: "Entry not found" });
 		return;
 	}
 	if (!content) {
-		res.status(400).send("Entry must have some content.");
+		res.status(400).json({ error: "Entry must have some content." });
 		return;
 	}
 

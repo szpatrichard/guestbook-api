@@ -12,7 +12,7 @@ router.get("/", (req, res, next) => {
 	if (entries.length > 0) {
 		res.json(req.app.locals.entries);
 	} else {
-		res.status(404).send("Guestbook is empty.");
+		res.status(404).json({ message: "Guestbook is empty." });
 	}
 });
 
