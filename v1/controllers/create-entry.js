@@ -25,7 +25,7 @@ const createEntry = (req, res, next) => {
 		title,
 	});
 
-	res.redirect(`/api/v1/entry/${slugLink}`);
+	res.redirect(`${req.app.locals.API_V1_ROUTE}/entry/${slugLink}`);
 };
 
 module.exports = {

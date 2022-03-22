@@ -14,7 +14,7 @@ const editEntry = (req, res, next) => {
 	}
 
 	entry.content = content;
-	res.redirect(`/api/v1/entry/${slug}`);
+	res.redirect(`${req.app.locals.API_V1_ROUTE}/entry/${slug}`);
 };
 
 module.exports = {

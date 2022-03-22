@@ -1,5 +1,5 @@
 @hostname = localhost
-@port = 3000
+@port = 3030
 @host = {{hostname}}:{{port}}
 @apiVersion = api/v1
 @contentType = application/json

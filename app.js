@@ -7,6 +7,9 @@ const apiV1 = require("./v1");
 
 const app = express();
 
+const API_V1_ROUTE = "/api/v1";
+app.locals.API_V1_ROUTE = API_V1_ROUTE;
+
 /* Entries */
 let entries = [];
 app.locals.entries = entries;
@@ -17,10 +20,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 /* API Version 1 */
-app.use("/api/v1", apiV1);
+app.use(app.locals.API_V1_ROUTE, apiV1);
 
 app.get("/", (req, res, next) => {
-	res.redirect("/api/v1");
+	res.redirect(app.locals.API_V1_ROUTE);
 });
 
 // catch 404 and forward to error handler

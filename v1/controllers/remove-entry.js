@@ -9,7 +9,7 @@ const removeEntry = (req, res, next) => {
 	}
 
 	entries.splice(entries.indexOf(entry), 1);
-	res.redirect("/");
+	res.redirect(`${req.app.locals.API_V1_ROUTE}`);
 };
 
 module.exports = {
