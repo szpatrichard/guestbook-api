@@ -5,8 +5,7 @@ require("dotenv").config();
 
 /* Path to database */
 const DB_PATH =
-	process.env.DB_PATH ||
-	path.resolve(__dirname, "..", "..", "db", "guestbook.db");
+	process.env.DB_PATH || path.resolve(__dirname, "..", "db", "guestbook.db");
 
 /* Open database connection */
 const db = new sqlite.Database(DB_PATH, sqlite.OPEN_READWRITE, (err) => {

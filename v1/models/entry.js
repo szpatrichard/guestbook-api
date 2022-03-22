@@ -1,5 +1,5 @@
 /* Imports */
-const db = require("../configs/db.config");
+const db = require("../../configs/db.config");
 
 /* Entry Model */
 class Entry {
