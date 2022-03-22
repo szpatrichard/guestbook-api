@@ -3,7 +3,7 @@ const path = require("path");
 const sqlite = require("sqlite3").verbose();
 
 /* Path to database */
-const DB_PATH = path.resolve(__dirname, "..", "..", "guestbook.db");
+const DB_PATH = path.resolve(__dirname, "..", "..", "db", "guestbook.db");
 
 /* Open database connection */
 const db = new sqlite.Database(DB_PATH, sqlite.OPEN_READWRITE, (err) => {
