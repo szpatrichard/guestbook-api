@@ -1,0 +1,42 @@
+@hostname = localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+@apiVersion = api/v1
+@contentType = application/json
+
+# Show all posts on homepage
+# GET /
+GET http://{{host}}/{{apiVersion}} HTTP/1.1
+###
+
+# Show a single post
+# GET /entry/:slug
+GET http://{{host}}/{{apiVersion}}/entry/1647922729611-my-stay-on-here HTTP/1.1
+###
+
+# Create a new post
+# POST /entry
+POST http://{{host}}/{{apiVersion}}/entry HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "title": "My Stay On Here",
+    "content": "I enjoy the time I spend on this website every day.",
+    "author": "Richárd Szilágyi"
+}
+###
+
+# Edit the content of a post
+# POST /entry/:slug
+POST http://{{host}}/{{apiVersion}}/entry/1647922729611-my-stay-on-here HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "content": "Still here..."
+}
+###
+
+# Delete a whole post
+# DELETE /entry/:slug
+DELETE http://{{host}}/{{apiVersion}}/entry/1647922729611-my-stay-on-here HTTP/1.1
+###
