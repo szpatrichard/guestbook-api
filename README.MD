@@ -2,6 +2,20 @@
 
 A simple Express API for logging entries in a guestbook. The guestbook is updated using REST API. Data is stored in a SQLite3 disk database.
 
+## Installation and Setup
+
+1. Install NPM packages
+
+```
+npm install
+```
+
+2. Start the Node server
+
+```
+npm start
+```
+
 ## Routes
 
 The route of each entry is slugified using the [slug](https://www.npmjs.com/package/slug) NPM package.
