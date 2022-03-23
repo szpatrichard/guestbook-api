@@ -40,7 +40,7 @@ An entry is modified through the use of controllers.
 
 ## HTTP Requests
 
-A list of HTTP requests to the Guestbook API can be found in the `requests.rest` file located in the `http` folder. To run these requests install the [Rest Client extension in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
+A list of HTTP requests to the Guestbook API can be found in the `requests.rest` file located in the `data` folder. To run these requests install the [Rest Client extension in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 
 ## Todo
 

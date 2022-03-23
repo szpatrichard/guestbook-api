@@ -2,9 +2,9 @@ const express = require("express");
 const path = require("path");
 const api = express.Router();
 
-const guestbookRouter = require("./v1/routes/guestbook");
+const router = require("./v1/routes/routes");
 
 api.use(express.static(path.join(__dirname, "v1", "public")));
-api.use("/", guestbookRouter);
+api.use("/", router);
 
 module.exports = api;
