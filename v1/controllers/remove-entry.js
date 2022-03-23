@@ -14,7 +14,7 @@ const removeEntry = (req, res) => {
 		/* Delete the entry if it exists and redirect to homepage */
 		Entry.delete(slug, (err) => {
 			if (err) console.error(err.message);
-			res.redirect(`${req.app.locals.API_V1_ROUTE}`);
+			res.redirect(`/api/v1`);
 		});
 	});
 };

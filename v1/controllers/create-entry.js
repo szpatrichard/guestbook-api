@@ -38,7 +38,7 @@ const createEntry = (req, res) => {
 	});
 
 	/* Redirect to the new entry */
-	res.redirect(`${req.app.locals.API_V1_ROUTE}/entry/${slugLink}`);
+	res.redirect(`/api/v1/entry/${slugLink}`);
 };
 
 /* Exports */

@@ -27,7 +27,7 @@ const editEntry = (req, res) => {
 		/* Edit the content if the entry exists and redirect to the entry */
 		Entry.editContent(editData, (err) => {
 			if (err) console.error(err.message);
-			res.redirect(`${req.app.locals.API_V1_ROUTE}/entry/${slug}`);
+			res.redirect(`/api/v1/entry/${slug}`);
 		});
 	});
 };

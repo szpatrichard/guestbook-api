@@ -3,16 +3,9 @@ const createError = require("http-errors");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
-const apiV1 = require("./v1");
+const apiRouter = require("./api-router");
 
 const app = express();
-
-const API_V1_ROUTE = "/api/v1";
-app.locals.API_V1_ROUTE = API_V1_ROUTE;
-
-/* Entries */
-// let entries = [];
-// app.locals.entries = entries;
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -20,10 +13,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 /* API Version 1 */
-app.use(app.locals.API_V1_ROUTE, apiV1);
+app.use("/api", apiRouter);
 
 app.get("/", (req, res, next) => {
-	res.redirect(app.locals.API_V1_ROUTE);
+	res.redirect("/api");
 });
 
 // catch 404 and forward to error handler
