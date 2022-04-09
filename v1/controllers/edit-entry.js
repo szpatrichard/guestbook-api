@@ -1,5 +1,5 @@
 /* Models */
-const Entry = require("../models/entry").Entry;
+const Entry = require("../models/Entry").Entry;
 
 const editEntry = (req, res) => {
 	const { slug } = req.params;

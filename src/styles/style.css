@@ -1,0 +1,56 @@
+html,
+* {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	background: #171c1d;
+	color: #ded;
+	margin: 0;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #00b7ff;
+	position: relative;
+	text-decoration: none;
+}
+
+a::after {
+	content: "";
+	background: #ffa500;
+	height: 2px;
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	width: 0;
+	transition: 200ms width ease-in-out;
+}
+
+a:hover::after {
+	width: 100%;
+}
+
+.container {
+	margin: 1rem;
+}
+
+.entry {
+	background: #272c2f;
+	padding: 1rem;
+	margin: 1rem 0;
+}
+
+.entry > .entry-title h3 {
+	margin: 0;
+	margin-bottom: 1rem;
+}
+
+.entry > .entry-content {
+	margin: 0.6rem 0;
+}
+
+.entry > .entry-author-date {
+	font-style: italic;
+}

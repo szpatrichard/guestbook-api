@@ -9,6 +9,18 @@ class Entry {
 		db.all(fetchAllQuery, cb);
 	}
 
+	/* Fetch all entries */
+	static fetchAllByNewestDate(cb) {
+		const fetchAllQuery = "SELECT * FROM entry ORDER BY publishedDate DESC";
+		db.all(fetchAllQuery, cb);
+	}
+
+	/* Fetch all entries */
+	static fetchAllByOldestDate(cb) {
+		const fetchAllQuery = "SELECT * FROM entry ORDER BY publishedDate ASC";
+		db.all(fetchAllQuery, cb);
+	}
+
 	/* Fetch a single entry */
 	static fetchOne(slug, cb) {
 		const fetchOneQuery = "SELECT * FROM entry WHERE slug=?";

@@ -17,5 +17,27 @@ router.get("/", (req, res) => {
 	});
 });
 
+router.get("/newest", (req, res) => {
+	Entry.fetchAllByNewestDate((err, rows) => {
+		if (err) console.error(err.message);
+		if (rows.length == 0) {
+			res.status(404).json({ message: "Guestbook is empty." });
+			return;
+		}
+		res.json(rows);
+	});
+});
+
+router.get("/oldest", (req, res) => {
+	Entry.fetchAllByOldestDate((err, rows) => {
+		if (err) console.error(err.message);
+		if (rows.length == 0) {
+			res.status(404).json({ message: "Guestbook is empty." });
+			return;
+		}
+		res.json(rows);
+	});
+});
+
 /* Exports */
 module.exports = router;

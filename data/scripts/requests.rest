@@ -5,8 +5,8 @@
 @contentType = application/json
 
 # Show all posts on homepage
-# GET /
-GET http://{{host}}/{{apiVersion}} HTTP/1.1
+# GET /entries
+GET http://{{host}}/{{apiVersion}}/entries HTTP/1.1
 ###
 
 # Show a single post
@@ -28,7 +28,7 @@ Content-Type: {{contentType}}
 
 # Edit the content of a post
 # POST /entry/:slug
-POST http://{{host}}/{{apiVersion}}/entry/1648011848464-lorem-ipsum-is-not-simply-random-text HTTP/1.1
+POST http://{{host}}/{{apiVersion}}/entry/1648123087621-lorem-ipsum-is-not-simply-random-text HTTP/1.1
 Content-Type: {{contentType}}
 
 {

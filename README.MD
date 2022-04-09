@@ -1,6 +1,6 @@
 # Guestbook
 
-A simple Express API for logging entries in a guestbook. The guestbook is updated using REST API. Data is stored in a SQLite3 disk database.
+A simple Express API for logging entries in a guestbook. The guestbook is updated using REST API. Data is stored in a SQLite3 disk database. The application's view is build with webpack.
 
 ## Installation and Setup
 
@@ -16,13 +16,19 @@ npm install
 npm start
 ```
 
+3. Start the application
+
+```
+npm run serve
+```
+
 ## Routes
 
 The route of each entry is slugified using the [slug](https://www.npmjs.com/package/slug) NPM package.
 
 | Route                | HTTP Method | Description                            | Router            | Path                  |
 | -------------------- | ----------- | -------------------------------------- | ----------------- | --------------------- |
-| `api/v1`             | GET         | Shows all entries in the guestbook.    | `guestbookRouter` | `routes/guestbook.js` |
+| `api/v1/entries`     | GET         | Shows all entries in the guestbook.    | `guestbookRouter` | `routes/guestbook.js` |
 | `api/v1/entry/:slug` | GET         | Shows a single entry in the guestbook. | `entryRouter`     | `routes/entry.js`     |
 | `api/v1/entry`       | POST        | Creates a new post.                    | `entryRouter`     | `routes/entry.js`     |
 | `api/v1/entry/:slug` | POST        | Updates the content of an entry.       | `entryRouter`     | `routes/entry.js`     |

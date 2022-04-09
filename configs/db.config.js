@@ -5,7 +5,8 @@ require("dotenv").config();
 
 /* Path to database */
 const DB_PATH =
-	process.env.DB_PATH || path.resolve(__dirname, "..", "db", "guestbook.db");
+	process.env.DB_PATH ||
+	path.resolve(__dirname, "..", "data", "guestbook.db");
 
 /* Open database connection */
 const db = new sqlite.Database(DB_PATH, (err) => {
@@ -45,7 +46,6 @@ db.serialize(() => {
 				console.error(err.message);
 				return err;
 			}
-			console.log("Entry table created.");
 		}
 	);
 

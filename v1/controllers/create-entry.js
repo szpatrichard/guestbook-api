@@ -2,7 +2,7 @@
 const slug = require("slug");
 
 /* Models */
-const Entry = require("../models/entry").Entry;
+const Entry = require("../models/Entry").Entry;
 
 const createEntry = (req, res) => {
 	const { title, content, author } = req.body;
